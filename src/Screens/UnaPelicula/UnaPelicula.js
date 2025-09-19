@@ -35,6 +35,7 @@ class UnaPelicula extends Component {
 
                 <h2>{pelicula.title} </h2>
                 <p>Rating: {pelicula.vote_average}</p>
+                <p>Fecha de estreno: {pelicula.release_date}</p>
 
                 <Footer/>
             </div>
