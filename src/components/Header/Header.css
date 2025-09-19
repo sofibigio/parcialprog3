@@ -1,0 +1,29 @@
+nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.nav {
+    margin: 0 !important;
+}
+.nav a{
+    color: #444;
+    text-decoration: none;
+}
+.nav a:hover{
+    font-weight: bold;
+}
+
+@media(min-width: 765px){
+    nav {
+        grid-template-columns: 4fr 3fr;
+    }
+}
+
+.logo1 {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
