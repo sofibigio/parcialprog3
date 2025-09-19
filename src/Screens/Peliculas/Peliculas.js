@@ -4,7 +4,7 @@ import ListaCards from "../../components/ListaCards/ListaCards";
 import Footer from "../../components/Footer/Footer";
 
 
-let apikey = '66374e925f9ce0061d8e10191732f374'
+let apikey = 'd39a94778431335cc790439556f16732'
 
 class Peliculas extends Component{
     constructor(props){
