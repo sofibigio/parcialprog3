@@ -1,7 +1,8 @@
 import { Component } from "react";
 import Header from "../../components/Header/Header";
 import ListaCards from "../../components/ListaCards/ListaCards";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Footer from "../../components/Footer/Footer";
 
 let apikey = '66374e925f9ce0061d8e10191732f374'
 
@@ -40,7 +41,7 @@ class Home extends Component{
 
                 <h2 class="alert alert-primary">Movies playing this week <Link to='/peliculas/now_playing' className='btn btn-primary'>Ver todas</Link></h2>
                 {this.state.loadingPelisNow ? <p>Cargando...</p> : <ListaCards data={this.state.pelisNow.slice(0,5)} /> }
-
+                <Footer />
             </div>
             
         )
