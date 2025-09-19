@@ -1,8 +1,8 @@
 import './App.css';
 
-import Home from './screens/Home/Home';
-import NotFound from './screens/NotFound/NotFound';
-import Peliculas from './screens/Peliculas/Peliculas';
+import Home from './Screens/Home/Home';
+import NotFound from './Screens/NotFound/NotFound';
+import Peliculas from './Screens/Peliculas/Peliculas';
 
 import { Switch, Route } from 'react-router-dom';
 
