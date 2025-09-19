@@ -28,7 +28,7 @@ class Card extends Component{
                     <h5 class="card-title">{this.props.data.title}</h5>
                     <button onClick={() => this.manejarDescripcion()} className="btn btn-primary">{this.state.textoBoton}</button>
                     { this.state.mostrarDescripcion ? <p class="card-text">{this.props.data.overview} </p> : '' }
-                    <Link to={`/detalle/${this.props.data.id}`} class="btn btn-primary">Ver más</Link>
+                    <Link to={`/pelicula/${this.props.data.id}`} class="btn btn-primary">Ver más</Link>
                     <a href="" class="btn alert-primary">🩶</a>
                 </div>
             </article>

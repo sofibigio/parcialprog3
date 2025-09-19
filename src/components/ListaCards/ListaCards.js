@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Card from "../Card/Card";
-import './ListaCards.css'
+import './ListaCards.css';
 
 class ListaCards extends Component{
     constructor(props){
