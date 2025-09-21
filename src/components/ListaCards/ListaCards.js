@@ -9,11 +9,13 @@ class ListaCards extends Component{
 
         }
     }
-
+componentDidMount(){
+    console.log(this.props)
+}
     render(){
         return(
             <section class="row cards" id="movies">
-                {this.props.data.map((unaPeli, idx) => <Card key={idx} data={unaPeli} /> )}
+                {this.props.data.map((unaPeli, idx) => <Card key={idx} data={unaPeli} tipo={this.props.tipo}/> )}
             </section>
         )
     }

@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import ListaCards from "../../components/ListaCards/ListaCards";
 import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer/Footer";
+import Formulario from "../../components/Formulario/Formulario"
 
 let apikey = 'd39a94778431335cc790439556f16732'
 
@@ -35,12 +36,12 @@ class Home extends Component{
         return(
             <div className="container">
                 <Header />
-
+                <Formulario /> 
                 <h2 class="alert alert-primary">Popular movies this week <Link to='/peliculas/popular' className='btn btn-primary'>Ver todas</Link></h2>
-                {this.state.loadingPelisPopulares ? <p>Cargando... </p> : <ListaCards data={this.state.pelisPopulares.slice(0,5)} /> }
+                {this.state.loadingPelisPopulares ? <p>Cargando... </p> : <ListaCards data={this.state.pelisPopulares.slice(0,5)} tipo="movie" /> }
 
                 <h2 class="alert alert-primary">Movies playing this week <Link to='/peliculas/now_playing' className='btn btn-primary'>Ver todas</Link></h2>
-                {this.state.loadingPelisNow ? <p>Cargando...</p> : <ListaCards data={this.state.pelisNow.slice(0,5)} /> }
+                {this.state.loadingPelisNow ? <p>Cargando...</p> : <ListaCards data={this.state.pelisNow.slice(0,5)} tipo="movie"/> }
                 <Footer />
             </div>
             

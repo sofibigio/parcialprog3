@@ -59,7 +59,7 @@ class Peliculas extends Component{
                 </form>
 
                 <h2 class="alert alert-primary">{this.props.match.params.tipo == 'popular' ? 'Popular movies this week' : 'Movies playing this week'}</h2>
-                {this.state.loading == true ? <p>cargando...</p> : this.state.busqueda == '' ? <ListaCards data={this.state.pelis} /> : <ListaCards data={this.state.pelisFiltradas} />}
+                {this.state.loading == true ? <p>cargando...</p> : this.state.busqueda == '' ? <ListaCards data={this.state.pelis} tipo="movie" /> : <ListaCards data={this.state.pelisFiltradas} tipo="movie"/>}
                 
 
                 <button onClick={() => this.cargarMas()} className="btn btn-primary">Cargar mas</button>

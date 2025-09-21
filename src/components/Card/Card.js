@@ -25,10 +25,10 @@ class Card extends Component{
                 <img src={`https://image.tmdb.org/t/p/w500${this.props.data.poster_path}`} class="card-img-top"
                     alt="..." />
                 <div class="cardBody">
-                    <h5 class="card-title">{this.props.data.title}</h5>
+                    <h5 class="card-title">{this.props.tipo=="movie"?this.props.data.title:this.props.data.name}</h5>
                     <button onClick={() => this.manejarDescripcion()} className="btn btn-primary">{this.state.textoBoton}</button>
                     { this.state.mostrarDescripcion ? <p class="card-text">{this.props.data.overview} </p> : '' }
-                    <Link to={`/pelicula/${this.props.data.id}`} class="btn btn-primary">Ver más</Link>
+                    <Link to={`/detalle/${this.props.tipo}/${this.props.data.id}`} class="btn btn-primary">Ver más</Link>
                     <a href="" class="btn alert-primary">🩶</a>
                 </div>
             </article>
