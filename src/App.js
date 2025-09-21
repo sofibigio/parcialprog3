@@ -1,11 +1,10 @@
 import './App.css';
-import Busqueda from './Screens/Busqueda/Busqueda';
+import Busqueda from './screens/Busqueda/Busqueda';
 
-import Home from './Screens/Home/Home';
-import NotFound from './Screens/NotFound/NotFound';
-import Peliculas from './Screens/Peliculas/Peliculas';
-import UnaPelicula from './Screens/UnaPelicula/UnaPelicula';
-import UnaSerie from './Screens/UnaSerie/UnaSerie';
+import Home from './screens/Home/Home';
+import NotFound from './screens/NotFound/NotFound';
+import Peliculas from './screens/Peliculas/Peliculas';
+import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
 
 import { Switch, Route } from 'react-router-dom';
 
