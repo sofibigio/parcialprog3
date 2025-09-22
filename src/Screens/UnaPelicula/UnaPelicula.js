@@ -27,7 +27,7 @@ class UnaPelicula extends Component {
 
     render(){
         
-        const pelicula= pelicula
+ 
         if(this.state.loading) return <p>Cargando...</p>; 
 
      
@@ -41,9 +41,9 @@ class UnaPelicula extends Component {
                 <img src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`} alt={this.state.pelicula.title} />                
                 <p>Rating: {this.state.pelicula.vote_average}</p>
                 <p>Fecha de estreno: {this.props.match.params.tipo=="movie"?this.state.pelicula.release_date:this.state.pelicula.first_air_date}</p>
-              {this.props.match.params.tipo=="movie"? <p> Duración: {pelicula.runtime} </p>:""}
+              {this.props.match.params.tipo=="movie"? <p> Duración: {this.state.pelicula.runtime} </p>:""}
                 <p>Sinopsis: {this.state.pelicula.overview} </p>
-                <p>Género: {this.state.pelicula.genres[0].name} </p> 
+                <p>Género: {this.state.pelicula.genres.map(gen => gen.name)} </p> 
    
                 <Footer/>
             </div>

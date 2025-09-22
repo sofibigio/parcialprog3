@@ -1,6 +1,7 @@
 import { Component } from "react";
 import './Header.css'
 import React from "react";
+import Formulario from "../Formulario/Formulario"
 
 
 class Header extends Component{
@@ -37,8 +38,9 @@ class Header extends Component{
                         <a class="nav-link" href="/favoritos">Favoritas</a>
                     </li>
                 </ul>
-               
+               <Formulario/>
             </nav>
+            
             </React.Fragment>
 
         )

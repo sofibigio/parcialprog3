@@ -52,7 +52,7 @@ class Home extends Component{
         return(
             <div className="container">
                 <Header />
-                <Formulario /> 
+               
                 <h2 class="alert alert-primary">Popular movies this week <Link to='/peliculas/popular' className='btn btn-primary'>Ver todas</Link></h2>
                 {this.state.loadingPelisPopulares ? <p>Cargando... </p> : <ListaCards data={this.state.pelisPopulares.slice(0,5)} tipo="movie" /> }
 
