@@ -1,13 +1,13 @@
 import './App.css';
-import Busqueda from './screens/Busqueda/Busqueda';
+import Busqueda from './Screens/Busqueda/Busqueda';
 
-import Home from './screens/Home/Home';
-import NotFound from './screens/NotFound/NotFound';
-import Peliculas from './screens/Peliculas/Peliculas';
-import Series from './screens/Series/Series';
+import Home from './Screens/Home/Home';
+import NotFound from './Screens/NotFound/NotFound';
+import Peliculas from './Screens/Peliculas/Peliculas';
+import Series from './Screens/Series/Series';
 
-import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
-import Favoritos from './screens/Favoritos/Favoritos';
+import UnaPelicula from './Screens/UnaPelicula/UnaPelicula';
+import Favoritos from './Screens/Favoritos/Favoritos';
 
 import { Switch, Route } from 'react-router-dom';
 

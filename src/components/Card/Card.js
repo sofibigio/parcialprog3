@@ -1,6 +1,7 @@
 import { Component } from "react";
 import './Card.css'
 import { Link } from 'react-router-dom'
+import { jsx } from "react/jsx-runtime";
 
 class Card extends Component{
     constructor(props){
@@ -22,7 +23,71 @@ class Card extends Component{
         }
     }
 
+
     botonFavorito() {
+        let favSeries = localStorage.getItem("seriesFav")
+        let favPelis = localStorage.getItem("pelisFav")
+        if (this.state.esFavorito === false) {
+            
+        
+        if (favSeries === null) {
+            let series = []
+            series.push("id de la serie")
+            let favString = JSON.stringify(series)
+            localStorage.setItem("seriesFav", favString)
+        }else{
+            let parseado = JSON.parse(favSeries)
+            parseado.push("el id de la series")
+            let favString = JSON.stringify(parseado)
+            localStorage.setItem("seriesFav", favString)
+        }
+        this.setState({
+            esFavorito: true,
+            textoFavorito: "Sacar de favoritos"
+        })
+       
+        if(this.state.esFavorito === false){
+             let parseado = JSON.parse(favSeries)
+             let nuevoFiltro = parseado.filter(ids => ids != "al ide de la serie")
+            let favString = JSON.stringify(nuevoFiltro)
+            localStorage.setItem("seriesFav", favString)
+
+            this.setState({
+            esFavorito: false,
+            textoFavorito: "🩶"
+        })            
+        }
+        
+
+        //hacer lo mismo con pelis
+          if (favPelis === null) {
+            let pelis = []
+            series.push("id de las peliculas")
+            let favString = JSON.stringify(pelis)
+            localStorage.setItem("pelisFav", favString)
+        }else{
+            let parseado = JSON.parse(favPelis)
+            parseado.push("el id de las peliculas")
+            let favString = JSON.stringify(parseado)
+            localStorage.setItem("pelisFav", favString)
+        }
+        this.setState({
+            esFavorito: true,
+            textoFavorito: "Sacar de favoritos"
+        })
+       
+        if(this.state.esFavorito === false){
+             let parseado = JSON.parse(favPelis)
+             let nuevoFiltro = parseado.filter(ids => ids != "al ide de la pelicula")
+            let favString = JSON.stringify(nuevoFiltro)
+            localStorage.setItem("pelisFav", favString)
+
+            this.setState({
+            esFavorito: false,
+            textoFavorito: "🩶"
+        })            
+        }
+        const esPeli = this.props.tipo == "movie";
         this.setState(
             {
                 esFavorito: !this.state.esFavorito,
@@ -31,7 +96,7 @@ class Card extends Component{
             }
         )
     }
-
+    }
     render(){
         return(
             <article class="single-card">

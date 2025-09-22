@@ -5,31 +5,35 @@ import { withRouter } from 'react-router-dom';
 import Footer from "../../components/Footer/Footer";
 import Formulario from "../../components/Formulario/Formulario";
 import Favorito from "../../components/Footer/Footer";
-import Header from "../../components/Formulario/Formulario"
+import Header from "../../components/Header/Header"
 
 let apikey = 'd39a94778431335cc790439556f16732'
-class Favoritos extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            peliculas: [],
-            loadingPelisPopulares: true,
-            series: [],
-            loadingPelisNow: true
-        }
-    }
+class Favoritos extends Component {
+   constructor(props){
+    super(props);
+    this.state = {
+      peliculas: [],
+      series: []
+      }}
 
-    render(){
-        return(
-          <div>
-            <Header />
-            <Favorito/>
-            <Footer />
-          </div>
-                    
-        )
-    }
+
+
+
+  render(){
+     return (
+      <div className="container">
+        <Header/>
+        <h1>Favoritos</h1>
+
+       
+        <Footer/>
+      </div>
+    )
   }
+   
+}
+  
+  
 
 
 export default withRouter(Favoritos)
