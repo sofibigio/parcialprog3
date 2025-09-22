@@ -10,7 +10,10 @@ class UnaPelicula extends Component {
         super(props)
         this.state = {
             pelicula: null,
-            loading: true
+            loading: true,
+            textoFavorito: "🩶",
+            esFavorito: false,
+            favs: "Sacar de favoritos"
         }
     }
 
@@ -23,6 +26,15 @@ class UnaPelicula extends Component {
             console.log(data)
             this.setState({pelicula: data, loading: false })
         })
+    }
+    botonFavorito() {
+        this.setState(
+            {
+                esFavorito: !this.state.esFavorito,
+                textoFavorito: this.state.textoFavorito === "🩶" ? "Sacar de favoritos" : "🩶",
+                favs: this.state.textoFavorito === "🩶" ? "" : "noMostrar"
+            }
+        )
     }
 
     render(){
@@ -44,7 +56,8 @@ class UnaPelicula extends Component {
               {this.props.match.params.tipo=="movie"? <p> Duración: {this.state.pelicula.runtime} </p>:""}
                 <p>Sinopsis: {this.state.pelicula.overview} </p>
                 <p>Género: {this.state.pelicula.genres.map(gen => gen.name)} </p> 
-   
+                <button className="favorito" onClick={() => this.botonFavorito()}>{this.state.textoFavorito} </button>
+
                 <Footer/>
             </div>
         ) 

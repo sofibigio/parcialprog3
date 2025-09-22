@@ -7,7 +7,10 @@ class Card extends Component{
         super(props);
         this.state = {
             mostrarDescripcion: false,
-            textoBoton: 'Mostrar descripcion'
+            textoBoton: 'Mostrar descripcion',
+            textoFavorito: "🩶",
+            esFavorito: false,
+            favs: "Sacar de favoritos"
         }
     }
 
@@ -17,6 +20,16 @@ class Card extends Component{
         } else {
             this.setState({mostrarDescripcion: false, textoBoton: 'Mostrar descripcion'})
         }
+    }
+
+    botonFavorito() {
+        this.setState(
+            {
+                esFavorito: !this.state.esFavorito,
+                textoFavorito: this.state.textoFavorito === "🩶" ? "Sacar de favoritos" : "🩶",
+                favs: this.state.textoFavorito === "🩶" ? "" : "noMostrar"
+            }
+        )
     }
 
     render(){
@@ -29,7 +42,7 @@ class Card extends Component{
                     <button onClick={() => this.manejarDescripcion()} className="btn btn-primary">{this.state.textoBoton}</button>
                     { this.state.mostrarDescripcion ? <p class="card-text">{this.props.data.overview} </p> : '' }
                     <Link to={`/detalle/${this.props.tipo}/${this.props.data.id}`} class="btn btn-primary">Ver más</Link>
-                    <a href="" class="btn alert-primary">🩶</a>
+                    <button className="favorito" onClick={() => this.botonFavorito()}>{this.state.textoFavorito} </button>
                 </div>
             </article>
         )
