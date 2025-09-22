@@ -9,7 +9,7 @@ class UnaPelicula extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            pelicula:null,
+            pelicula: null,
             loading: true
         }
     }
@@ -26,23 +26,25 @@ class UnaPelicula extends Component {
     }
 
     render(){
-        const pelicula=this.state.pelicula
-        const loading=this.state.loading
+        
+        const pelicula= pelicula
+        if(this.state.loading) return <p>Cargando...</p>; 
 
-        if(loading) return <p>Cargando...</p>; 
+     
+        
 
         return( 
             <div className="container">
                 <Header/>
 
-                <h2>{ this.props.match.params.tipo=="movie"?pelicula.title:pelicula.name} </h2>
-                <img src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />                
-                <p>Rating: {pelicula.vote_average}</p>
-                <p>Fecha de estreno: {this.props.match.params.tipo=="movie"?pelicula.release_date:pelicula.first_air_date}</p>
+                <h2>{ this.props.match.params.tipo=="movie"?this.state.pelicula.title:this.state.pelicula.name} </h2>
+                <img src={`https://image.tmdb.org/t/p/w500${this.state.pelicula.poster_path}`} alt={this.state.pelicula.title} />                
+                <p>Rating: {this.state.pelicula.vote_average}</p>
+                <p>Fecha de estreno: {this.props.match.params.tipo=="movie"?this.state.pelicula.release_date:this.state.pelicula.first_air_date}</p>
               {this.props.match.params.tipo=="movie"? <p> Duración: {pelicula.runtime} </p>:""}
-                <p>Sinopsis: {pelicula.overview} </p>
-                <p>Género: {pelicula.genre_ids} </p>
-
+                <p>Sinopsis: {this.state.pelicula.overview} </p>
+                <p>Género: {this.state.pelicula.genres[0].name} </p> 
+   
                 <Footer/>
             </div>
         ) 

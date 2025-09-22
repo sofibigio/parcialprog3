@@ -28,6 +28,12 @@ class Header extends Component{
                         <a class="nav-link" href="/peliculas/now_playing">Peliculas en cartelera</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/tv/airing_today">Series de hoy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tv/on_the_air">Series al aire</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/favoritos">Favoritas</a>
                     </li>
                 </ul>

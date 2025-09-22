@@ -4,6 +4,8 @@ import Busqueda from './Screens/Busqueda/Busqueda';
 import Home from './Screens/Home/Home';
 import NotFound from './Screens/NotFound/NotFound';
 import Peliculas from './Screens/Peliculas/Peliculas';
+import Series from './Screens/Series/Series';
+
 import UnaPelicula from './Screens/UnaPelicula/UnaPelicula';
 import Favoritos from './Screens/Favoritos/Favoritos';
 
@@ -16,6 +18,8 @@ function App() {
         <Route path='/' component={Home} exact={true} />
 
           <Route path='/peliculas/:tipo' component={Peliculas} exact={true} />
+          <Route path='/tv/:tipo' component={Series} exact={true} />
+
 
         <Route path="/detalle/:tipo/:id" component={UnaPelicula} exact={true}/>
         <Route path="/busqueda/:tipo/:busqueda" component={Busqueda} exact={true}/>
