@@ -4,3 +4,15 @@
 .single-card {
     width: 19%;
 }
+
+body{
+    background-color: lightblue;
+}
+
+.card-title{
+    color: white;
+}
+
+.cardBody{
+    color: white;
+}

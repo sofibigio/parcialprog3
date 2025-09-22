@@ -15,7 +15,7 @@ class Header extends Component{
         return(
             <React.Fragment>
                 <img className="logo1" src="/logo.png" alt="logo"/>
-                <h1>BAS Movies</h1>
+                <h1 className="title">BAS Movies</h1>
                             <nav>
                 <ul class="nav nav-tabs my-4">
                     <li class="nav-item">
